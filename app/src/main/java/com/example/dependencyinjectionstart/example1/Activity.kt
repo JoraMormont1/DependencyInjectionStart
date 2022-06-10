@@ -13,6 +13,9 @@ class Activity {
     @Inject
     lateinit var monitor: Monitor
 
+    @Inject
+    lateinit var computer: Computer
+
     init {
         DaggerNewComponent.create().inject(this)
     }
