@@ -15,11 +15,13 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy{
         DaggerApplicationComponent.builder()
-            .contextModule(ContextModule(application))
+            .context(application)
+            .timeMills(System.currentTimeMillis())
+            .build()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        component.inject(this)
+        component.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.method()
