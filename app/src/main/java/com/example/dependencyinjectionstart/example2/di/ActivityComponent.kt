@@ -16,7 +16,8 @@ interface ActivityComponent {
     @Subcomponent.Factory
     interface Factory{
         fun create(
-            @BindsInstance id: String
+            @BindsInstance @IdQualifier id: String,
+            @BindsInstance @NameQualifier name: String
         ) : ActivityComponent
     }
 }
