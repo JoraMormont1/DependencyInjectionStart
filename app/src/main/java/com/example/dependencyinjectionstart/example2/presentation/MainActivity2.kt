@@ -26,6 +26,8 @@ class MainActivity2 : AppCompatActivity() {
 
     private val component by lazy{
         (application as ExampleApp).component
+            .ActivityComponentFactory()
+            .create("MY_ID")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.method()
+        viewModel2.method()
 
     }
 }

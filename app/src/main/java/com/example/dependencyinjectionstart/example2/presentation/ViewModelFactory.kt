@@ -5,9 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dependencyinjectionstart.example2.di.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
-import kotlin.reflect.KClass
 
-@ApplicationScope
+
 class ViewModelFactory @Inject constructor(
     private val viewModelProviders: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
 ): ViewModelProvider.Factory{

@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy{
         (application as ExampleApp).component
+            .ActivityComponentFactory()
+            .create("MY_ID")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.method()
+        viewModel2.method()
         findViewById<TextView>(R.id.tv_hello_world).setOnClickListener {
             Intent(this, MainActivity2::class.java).apply {
                 startActivity(this)
